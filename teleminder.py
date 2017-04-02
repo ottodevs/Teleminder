@@ -13,6 +13,7 @@ import cat
 
 TOKEN = 'TOKEN'
 CHAT_ID = 123456
+WHEN = '9:30'
 IMAGES_PATH = os.path.dirname(os.path.abspath(__file__)) +'/images/'
 
 tb = telebot.TeleBot(TOKEN)
@@ -51,9 +52,9 @@ def process_message(message):
 
 
 def main():
-    tb.send_message(CHAT_ID, "¡Hola! Soy PastiBot.", None, None, None)
-    schedule.every().day.at('9:30').do(send_message)
-
+    tb.send_message(CHAT_ID, "¡Hola! Soy Teleminder.", None, None, None)
+    schedule.every().day.at(WHEN).do(send_message)
+    send_message()
     tb.polling()
     while True:
         schedule.run_pending()
