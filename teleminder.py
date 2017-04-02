@@ -31,7 +31,7 @@ def send_reminder(message):
 
 def send_message():
     markup = types.ReplyKeyboardMarkup()
-    markup.add('Yes, on time', 'Yes but late', 'No', 'Free Day' )
+    markup.add('Yes on time', 'Yes but late', 'No', 'Free Day' )
     tb.send_message(CHAT_ID, "Did you take your pill?", None, None, markup)
 
 # Handle messages with content_type 'text'
